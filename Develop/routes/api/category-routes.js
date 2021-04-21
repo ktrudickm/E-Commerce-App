@@ -53,6 +53,9 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+// Not working!!
+
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
