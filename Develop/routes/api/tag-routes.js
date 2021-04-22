@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [
         { 
           model: Product,
-          attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+          through: ProductTag
         }],
     });
     res.status(200).json(tagData);
@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const tagData = await Tag.update({
+    const tagData = await Tag.update(req.body, {
       where: {
         id: req.params.id,
       },
