@@ -25,20 +25,6 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-
-  // Product.findAll ({
-  //   attributes: ['id', 'product_name', 'price', 'stock'],
-  //   include: [
-  //     {
-  //       model: Category,
-  //       attributes: ['category_name']
-  //     },
-  //     {
-  //       model: Tag,
-  //       attributes: ['tag_name']
-  //     }
-  //   ]
-  // })
 });
 
 // get one product
@@ -143,6 +129,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// Works!!
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {
